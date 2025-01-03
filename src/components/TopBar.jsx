@@ -1,11 +1,18 @@
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 
 
 const TopBar = () => {
+
+    const navigate = useNavigate()
+
     return <TopBox>
-        <div>&lt; 뒤로가기</div>
-        <div>펫브릿지</div>
+        <div onClick={() => navigate(-1)} style={{
+            cursor: "pointer"
+        }}>
+            &lt; 뒤로가기
+        </div>
     </TopBox>
 }
 
@@ -13,16 +20,15 @@ export default TopBar
 
 
 const TopBox = styled.div`
-    margin-bottom: 50px;
-    width: 100%;
+    /* width: 100%; */
+    /* margin-bottom: 20px; */
     height: 60px;
+    padding: 0 16px;
     border-bottom: 1px solid #dbdbdb;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     font-family: "Pretendard-Medium";
-    color: #7d7d7d;
+    color: #a5a5a5;
 `;
-
 

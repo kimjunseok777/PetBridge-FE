@@ -4,8 +4,10 @@ import styled from "styled-components"
 
 
 
-const CertifyButton = ({children}) => {
-    return <Button>{children}</Button>
+const CertifyButton = ({children, ...props}) => {
+    return <Button
+        {...props}
+    >{children}</Button>
 }
 
 export default CertifyButton
@@ -18,7 +20,7 @@ const Button = styled.button`
     color: white;
     border-radius: 6px;
     font-family: "Pretendard-Medium";
-    font-size: 16px;
+    font-size: 18px;
     &:hover{
         background-color: #d56700;
     }

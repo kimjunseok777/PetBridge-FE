@@ -1,12 +1,13 @@
 import styled from "styled-components"
+// import checkIcon from "../image/check-icon.png"
 
 
 
+const CheckBox = ({text, ...props}) => {
 
-const CheckBox = ({text}) => {
-
+    // 하나만 선택 돼야 하는 체크박스가 있고, 중복 선택 돼도 괜찮은 체크 박스가 있다
     return <CheckBoxLayout>
-        <InputCheck type="checkBox"/>
+        <InputCheck type="checkBox" {...props}/>
         <label style={{
             fontFamily: 'Pretendard-Medium',
             color: '#5f5f5f'
@@ -31,6 +32,7 @@ const InputCheck = styled.input`
     &:checked{
         background-color: #ff8b1f;
         border: 3px solid #ff8b1f;
+        background-image: url("../image/check-icon.png");
     }
 `
 
