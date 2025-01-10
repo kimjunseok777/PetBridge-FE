@@ -1,32 +1,41 @@
 import styled from "styled-components"
 import TopFilterBtn from "./top-filter-btn"
+import { useState } from "react"
 
 
 
 const TopFilterBar = () => {
 
+
     // 상단 필터 목데이터
-    const FILTER_BTN_ARRAY = [
+    const [topFilterState, setTopFilterState] = useState([
         {
+            id: 1,
             text: "최신순",
             state: true,
         },
         {
+            id: 2,
             text: "등록순",
             state: false,
         },
         {
+            id: 3,
             text: "찜순",
             state: false,
         },
         {
+            id: 4,
             text: "조회순",
             state: false,
         },
-    ]
+    ])
+
 
     return <FilterContainer>
-        {FILTER_BTN_ARRAY.map((el) => <TopFilterBtn el={el} key={el.text}/>)}
+        {topFilterState.map((el) => <TopFilterBtn el={el} key={el.id}
+            topFilterState={topFilterState} setTopFilterState={setTopFilterState}
+        />)}
     </FilterContainer>
 }
 

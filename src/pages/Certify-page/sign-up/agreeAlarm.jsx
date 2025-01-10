@@ -22,8 +22,14 @@ const AgreeAlarm = () => {
 
 
     return <Container>
-        <CheckBox text={'메일'} name="agreeAlarm" value="1" onChange={(e) => checkOnlyOne(e.target)}/>
-        <CheckBox text={'메세지'} name="agreeAlarm" value="2" onChange={(e) => checkOnlyOne(e.target)}/>
+        
+        <CheckBox text={'메일'} name="agreeAlarm" value="1"
+            onChange={(e) => checkOnlyOne(e.target)}
+        />
+        <CheckBox text={'메세지'} name="agreeAlarm" value="2"
+            onChange={(e) => checkOnlyOne(e.target)}
+        />
+        
     </Container>
 }
 

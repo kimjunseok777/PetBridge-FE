@@ -1,12 +1,17 @@
 import styled from "styled-components"
 import filterIcon from "../../../image/filter.png"
+import { useFilter } from "../../../store/filterPop.store"
 
 
 
 const FixedBtnFilter = () => {
 
+    const {setIsOpenFilter} = useFilter()
+
+    // filter 기능 ON
     const onPressFilterBtn = () => {
-        return alert("분양글 필터 버튼 클릭")
+        // alert('필터 기능 활성화')
+        return setIsOpenFilter(true)
     }
 
     return <CircleBox onClick={onPressFilterBtn}>
@@ -30,3 +35,8 @@ const CircleBox = styled.div`
 const IconImg = styled.img`
     width: 30px;
 `
+
+
+
+
+

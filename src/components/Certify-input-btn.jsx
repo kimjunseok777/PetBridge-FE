@@ -3,13 +3,13 @@ import styled from "styled-components"
 
 
 
-const CertifyInputBtn = ({error, name, register, btnText, ...props}) => {
+const CertifyInputBtn = ({error, name, register, btnText, func, ...props}) => {
 
 
     return <>
         <InputForm>
             <Input {...props} {...register?.(name)}/>
-            <InputBtn type="button">{btnText}</InputBtn>
+            <InputBtn type="button" onClick={func}>{btnText}</InputBtn>
         </InputForm>
 
         <p style={{

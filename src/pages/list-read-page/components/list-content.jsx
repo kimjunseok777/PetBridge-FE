@@ -4,9 +4,9 @@ import ListContentLike from "./list-content-like"
 
 
 
-const ListContent = ({el}) => {
+const ListContent = ({el, ...props}) => {
 
-    return <ContentContainer>
+    return <ContentContainer {...props}>
 
         {/*------------ 좌측 이미지 ------------*/}
         <ImgContainer>

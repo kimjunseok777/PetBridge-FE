@@ -4,8 +4,7 @@ import TopFilterBar from "./topComponents/top-filter"
 import styled from "styled-components"
 import ListContent from "./components/list-content"
 import animal from "../../image/animal.jpg"
-import FixedBtnFilter from "./components/Fixed-Btn-filter"
-import FixedBtnCreate from "./components/Fixed-Btn-create"
+import FixedBtn from "./components/Fixed-Btn"
 
 
 
@@ -15,6 +14,10 @@ const ListRead = () => {
 
     const onPressSearchBar = () => {
         return navigate("/list-search")
+    }
+
+    const onPressListDetail = () => {
+        return navigate("/list-detailPage")
     }
 
     //--------------------------------------------------------------------------------------------
@@ -87,20 +90,18 @@ const ListRead = () => {
     //--------------------------------------------------------------------------------------------
 
     return <>
-        {/* --------------- 상단 검색 & 필터 --------------- */}
+        {/* --------------- 상단 검색 & 상단 필터 --------------- */}
         <TopSearchBar onClick={onPressSearchBar}/>
         <TopFilterBar/>
 
         {/* --------------- 분양글 리스트 --------------- */}
         <ListContainer>
-            {ContentMockData.map((el) => <ListContent key={el.id} el={el}/>)}
+            {ContentMockData.map((el) => <ListContent key={el.id} el={el}
+            onClick={onPressListDetail}/>)}
         </ListContainer>
 
         {/* --------------- 검색필터 & 분양글생성 버튼 --------------- */}
-        <FixedBtn>
-            <FixedBtnFilter/>
-            <FixedBtnCreate/>
-        </FixedBtn>
+        <FixedBtn/>
     </>
 }
 
@@ -108,15 +109,7 @@ export default ListRead
 
 
 const ListContainer = styled.div`
-    padding: 16px 16px 200px 16px;
-`
-// 우측 하단 fixed 버튼
-const FixedBtn = styled.div`
-    z-index: 999;
-    width: 74px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
+    padding: 16px 16px 60px 16px;
 `
 
 

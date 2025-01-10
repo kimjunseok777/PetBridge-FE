@@ -2,14 +2,25 @@ import styled from "styled-components"
 
 
 
-const TopFilterBtn = ({el}) => {
+const TopFilterBtn = ({el, topFilterState, setTopFilterState}) => {
 
-    const onPressTopFilter = () => {
-        return alert(`${el.text} 필터가 클릭되었습니다`)
+    const onPressTopFilter = (clickId) => {
+        const temp_FilterArray = [...topFilterState]
+        const selectFilterIndex = topFilterState.findIndex((el) => el.id === clickId)
+        // 배열 순회해서 state : false 로 초기화 시켜준다 :
+        for(el of topFilterState) {
+            el.state = false
+        }
+        // 클릭된 배열 요소만 state : true 로 바꿔준다 :
+        temp_FilterArray[selectFilterIndex] = {
+            ...temp_FilterArray[selectFilterIndex],
+            state: true
+        }
+        return setTopFilterState(temp_FilterArray)
     }
 
     return <BtnBox>
-        <BtnText onClick={onPressTopFilter}
+        <BtnText onClick={() => onPressTopFilter(el.id)}
             $isSelected={el.state}
         >
             {el.text}

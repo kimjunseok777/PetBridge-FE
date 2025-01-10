@@ -1,5 +1,7 @@
 import styled from "styled-components"
-// import checkIcon from "../image/check-icon.png"
+import checkIcon from "../image/check-icon.png"
+import checkIconGray from "../image/check-icon-gray.png"
+import { useState } from "react";
 
 
 
@@ -9,8 +11,9 @@ const CheckBox = ({text, ...props}) => {
     return <CheckBoxLayout>
         <InputCheck type="checkBox" {...props}/>
         <label style={{
-            fontFamily: 'Pretendard-Medium',
-            color: '#5f5f5f'
+            fontFamily: 'Pretendard-SemiBold',
+            color: '#777777',
+            letterSpacing: "-0.5px",
         }}>{text}</label>
     </CheckBoxLayout>
 }
@@ -20,19 +23,26 @@ export default CheckBox
 const CheckBoxLayout = styled.div`
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 2px;
 `
 
 const InputCheck = styled.input`
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     appearance: none;
     border-radius: 50%;
-    border: 3px solid #cacaca;
+    border: 3px solid #dedede;
+    background-image: url(${checkIconGray});
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
     &:checked{
         background-color: #ff8b1f;
         border: 3px solid #ff8b1f;
-        background-image: url("../image/check-icon.png");
+        background-image: url(${checkIcon});
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 60%;
     }
 `
 

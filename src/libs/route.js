@@ -6,7 +6,7 @@ import SignUpComplete from "../pages/Certify-page/sign-up-complete";
 import ListRead from "../pages/list-read-page/listRead";
 import ListCreate from "../pages/list-create-page/listCreate";
 import ListSearch from "../pages/list-search-page/listSearch";
-
+import ListDetail from "../pages/list-detail-page/listDetail";
 
 
 export const router = createBrowserRouter([
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
         
         /* RootLayout의 자식 컴포넌트를 Outlet으로 보여주는 것이다
         --> 상단에 뒤로가기 바나 네브바가 페이지마다 고정되기 때문에 만들어준 것이다 */
-        
+
         children: [
             {
                 // 로그인 페이지
@@ -48,6 +48,11 @@ export const router = createBrowserRouter([
                 path: "/list-create",
                 element: <ListCreate/>
             },
+            {
+                // 분양글 상세보기 페이지 --> 일단 퍼블리싱 작업 먼저 하기 위해 따로 경로 빼놔서 작업 했음
+                path: "/list-detailPage",
+                element: <ListDetail/>
+            },
             //--------------------------------------------------------------------
             {
                 // 메세지 페이지
@@ -56,7 +61,5 @@ export const router = createBrowserRouter([
         ]
     },
 ])
-
-
 
 

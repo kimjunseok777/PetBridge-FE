@@ -12,9 +12,26 @@ const SignIn = () => {
 
     const navigate = useNavigate()
 
-    const onPressSignIn = () => {
-        alert('분양글 리스트페이지로 이동합니다')
-        return navigate("/list-read")
+    const onPressSignIn = async (data) => {
+        const response = await fetch("http://54.180.158.123:8080/api/v1/auth/login", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: data.email,
+                password: data.password
+            })
+        })
+
+        const response_data = await response.json()
+
+        console.log(response_data)
+
+        if(response.status === 200) {
+            alert('분양글 리스트페이지로 이동합니다')
+            return navigate("/list-read")
+        }
     }
 
     //----------------------------------------------------------
@@ -55,6 +72,7 @@ const SignIn = () => {
             안녕하세요 펫브릿지입니다. 통합회원 로그인이 가능합니다.
         </div>
 
+        {/*------------------------------ 로그인 ------------------------------*/}
         <LoginForm onSubmit={handleSubmit(onPressSignIn)}>
             <CertifyInput placeholder={'이메일을 입력해주세요'} register={register} name={'email'}
                 error={errors.email?.message}
