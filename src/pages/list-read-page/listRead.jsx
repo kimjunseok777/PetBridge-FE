@@ -91,17 +91,17 @@ const ListRead = () => {
 
     return <>
         {/* --------------- 상단 검색 & 상단 필터 --------------- */}
-        <TopSearchBar onClick={onPressSearchBar}/>
-        <TopFilterBar/>
+        <TopSearchBar onClick={onPressSearchBar} />
+        <TopFilterBar />
 
         {/* --------------- 분양글 리스트 --------------- */}
         <ListContainer>
             {ContentMockData.map((el) => <ListContent key={el.id} el={el}
-            onClick={onPressListDetail}/>)}
+                onClick={onPressListDetail} />)}
         </ListContainer>
 
         {/* --------------- 검색필터 & 분양글생성 버튼 --------------- */}
-        <FixedBtn/>
+        <FixedBtn />
     </>
 }
 
@@ -109,7 +109,8 @@ export default ListRead
 
 
 const ListContainer = styled.div`
-    padding: 16px 16px 60px 16px;
+    /* padding: 16px 16px 60px 16px; */
+    padding: 16px;
 `
 
 

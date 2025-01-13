@@ -32,6 +32,7 @@ const ContentContainer = styled.div`
     height: 200px;
     margin-bottom: 16px;
     display: flex;
+    cursor: pointer;
 `
 
 // 좌측 이미지 :

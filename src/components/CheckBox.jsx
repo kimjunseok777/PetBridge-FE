@@ -27,6 +27,7 @@ const CheckBoxLayout = styled.div`
 `
 
 const InputCheck = styled.input`
+    cursor: pointer;
     width: 28px;
     height: 28px;
     appearance: none;

@@ -44,20 +44,32 @@ export const router = createBrowserRouter([
                 element: <ListSearch/>
             },
             {
+                // 분양글 상세보기 페이지 --> 퍼블리싱 작업 위해 경로 따로 빼놓음
+                path: "/list-detailPage",
+                element: <ListDetail/>
+            },
+            {
                 // 분양글 생성 페이지 (리스트 생성 페이지)
                 path: "/list-create",
                 element: <ListCreate/>
             },
-            {
-                // 분양글 상세보기 페이지 --> 일단 퍼블리싱 작업 먼저 하기 위해 따로 경로 빼놔서 작업 했음
-                path: "/list-detailPage",
-                element: <ListDetail/>
-            },
             //--------------------------------------------------------------------
             {
-                // 메세지 페이지
-                path: "/message"
+                // 알람 페이지
+                path: "/alarmPage",
+                // element: </>
             },
+            {
+                // 입양 계약서 페이지 (입양자)
+                path: "/contract-userPage",
+                // element: </>
+            },
+            {
+                // 입양 계약서 페이지 (분양자)
+                path: "/contract-writerPage",
+                // element: </>
+            },
+            //--------------------------------------------------------------------
         ]
     },
 ])

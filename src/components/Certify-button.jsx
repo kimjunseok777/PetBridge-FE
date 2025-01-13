@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 
 
-
 const CertifyButton = ({children, ...props}) => {
     return <Button
         {...props}

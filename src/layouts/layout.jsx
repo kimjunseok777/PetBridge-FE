@@ -9,18 +9,21 @@ import { useFilter } from "../store/filterPop.store"
 
 const RootLayout = () => {
 
-    const {isOpenFilter} = useFilter()
+    const { isOpenFilter } = useFilter()
 
     return <Body>
 
         {/* --------------- 분양글 필터 팝업창 --------------- */}
-        {isOpenFilter && <FilterPopUpMain/>}
+        {isOpenFilter && <FilterPopUpMain />}
 
         <Container>
+
             {/* 로그인 페이지와 기본 리스트 페이지에서는 상단에 뒤로가기 바가 나오지 않게 해야한다 */}
-            <TopBar/>
+            <TopBar />
+
             {/* route.js 에서 이 컴포넌트의 자식 컴포넌트를 Outlet으로 보여주는 것이다 */}
-            <Outlet/>
+            <Outlet />
+
         </Container>
     </Body>
 }
@@ -46,3 +49,4 @@ const Container = styled.div`
     overflow: hidden;
 `
 //-------------------------------------------------------------
+

@@ -24,6 +24,7 @@ export default BannerLikeBtn
 
 
 const BtnBox = styled.div`
+    cursor: pointer;
     position: absolute;
     left: 16px;
     bottom: 16px;

@@ -42,7 +42,7 @@ const FilterPopUpBoard = () => {
             {/*------------------ 필터링 두번째 ------------------*/}
             <FilterSecond/>
 
-            <div style={{height: "600px"}}></div>
+            {/* <div style={{height: "600px"}}></div> */}
 
             <div style={{padding: "0px 16px"}}>
                 <CertifyButton>307개의 분양글 보기</CertifyButton>
