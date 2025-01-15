@@ -14,12 +14,17 @@ const SignUpComplete = () => {
     }
 
     return <Container>
+
         <Layout>
-            <CheckCircle><Img src={CheckIcon}/></CheckCircle>
+            <CheckCircle><Img src={CheckIcon} /></CheckCircle>
             <Text1>회원가입 완료</Text1>
-            <Text2>펫브릿지에 오신 것을 환영합니다!<br/>회원가입을 완료하셨습니다, 로그인 페이지로 이동합니다.</Text2>
+            <Text2>펫브릿지에 오신 것을 환영합니다!<br />회원가입을 완료하셨습니다, 로그인 페이지로 이동합니다.</Text2>
         </Layout>
-        <CertifyButton onClick={onPressSignIn}>로그인 바로가기</CertifyButton>
+
+        <BtnPosition>
+            <CertifyButton onClick={onPressSignIn}>로그인 바로가기</CertifyButton>
+        </BtnPosition>
+
     </Container>
 }
 
@@ -29,15 +34,15 @@ export default SignUpComplete
 const Container = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 40% 16px;
+    height: calc(100vh - 60px);
+    position: relative;
 `
 const Layout = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: -100px;
 `
 const CheckCircle = styled.div`
     border-radius: 50%;
@@ -67,6 +72,11 @@ const Text2 = styled.div`
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 30px;
+`
+const BtnPosition = styled.div`
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 16px;
 `
 
 

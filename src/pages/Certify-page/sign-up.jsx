@@ -27,7 +27,7 @@ const SignUp = () => {
     //--------------------------------------------------------------------------------------------
     const {
         register,
-        formState: {errors, isValid}, 
+        formState: { errors, isValid },
         handleSubmit,
         watch
     } = useForm({
@@ -41,7 +41,7 @@ const SignUp = () => {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
-              },
+            },
             body: JSON.stringify({
                 email: data.email,
                 password: data.password,
@@ -49,13 +49,13 @@ const SignUp = () => {
             })
         })
 
-        if(response.status === 201) {
+        if (response.status === 201) {
             alert("회원가입 완료")
             return navigate("/sign-up-complete")
         }
     }
     //--------------------------------------------------------------------------------------------
-    
+
     // 중복확인 버튼 :
     const onPressCheckOverlapNickName = async () => {
         const reponse = await fetch(`/api/v1/member/nickname/${watch("nickName")}`, {
@@ -68,7 +68,7 @@ const SignUp = () => {
         const response_data = await reponse.json()
         // console.log(watch("nickName"))
         //==>  nickName 으로 걸어준 input 의 value값을 가져올 수 있다
-        if(response_data.status === 200) {
+        if (response_data.status === 200) {
             alert('사용가능한 닉네임입니다.')
         }
     }
@@ -98,7 +98,6 @@ const SignUp = () => {
 
 
     return <Form onSubmit={handleSubmit(onPressSignUp)}>
-        <p></p>
         <InputTitle>회원가입</InputTitle>
 
         {/*------------------------------- 닉네임 -------------------------------*/}
@@ -129,7 +128,9 @@ const SignUp = () => {
             name={'password-confirm'} error={errors["password-confirm"]?.message}
         />
 
-        <CertifyButton>회원가입</CertifyButton>
+        <BtnPosition>
+            <CertifyButton>회원가입</CertifyButton>
+        </BtnPosition>
     </Form>
 }
 
@@ -137,12 +138,19 @@ export default SignUp
 
 
 const Form = styled.form`
-    margin-bottom: 20px;
-    padding: 0 16px;
+    padding: 16px;
+    position: relative;
+    height: calc(100vh - 60px);
+    box-sizing: border-box;
 `
 const InputTitle = styled.div`
     font-family: "Pretendard-Bold";
     color: #22252A;
     font-size: 30px;
     padding: 20px 0px;
+`
+const BtnPosition = styled.div`
+    width: calc(100% - 32px);
+    position: absolute;
+    bottom: 16px;
 `

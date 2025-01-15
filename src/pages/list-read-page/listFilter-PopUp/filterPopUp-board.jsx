@@ -20,31 +20,30 @@ const FilterPopUpBoard = () => {
         <FilterHeader>
             <div style={{ display: "flex", alignItems: "center" }}>
                 <HeaderCircleIcon>
-                    <img src={filterIcon} style={{width: 20}}/>
+                    <img src={filterIcon} style={{ width: 20 }} />
                 </HeaderCircleIcon>
                 <HeaderText>필터</HeaderText>
             </div>
             <ResetBtn onClick={onPressResetBtn}>
-                <img src={resetBtn} style={{ width: 24 }}/>
+                <img src={resetBtn} style={{ width: 24 }} />
                 필터 초기화
             </ResetBtn>
         </FilterHeader>
 
-        <div style={{ height: 1, backgroundColor: "#dbdbdb" }}/>
+        <div style={{ height: 1, backgroundColor: "#dbdbdb" }} />
 
         {/*---------------------- 필터링 ----------------------*/}
         {/*--> 이 form 태그 내에서만 스크롤이 됐으면 좋겠음 */}
-        <form style={{overflowY: "scroll"}}>
+        <form style={{ marginTop: "80px" }}>
             {/*------------------ 필터링 첫번째 ------------------*/}
-            <FilterFirst/>
+            <FilterFirst />
 
-            <div style={{ height: 1, backgroundColor: "#dbdbdb" }}/>
+            <div style={{ height: 1, backgroundColor: "#dbdbdb" }} />
             {/*------------------ 필터링 두번째 ------------------*/}
-            <FilterSecond/>
+            <FilterSecond />
 
-            {/* <div style={{height: "600px"}}></div> */}
 
-            <div style={{padding: "0px 16px"}}>
+            <div style={{ padding: "6px 16px 16px" }}>
                 <CertifyButton>307개의 분양글 보기</CertifyButton>
             </div>
         </form>
@@ -58,7 +57,15 @@ const FilterHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 16px;
+    padding: 0px 16px;
+    background-color: white;
+    position: fixed;
+    width: calc(100% - 32px);
+    max-width: 768px;
+    height: 80px;
+    border-bottom: 1px solid #dbdbdb;
+    z-index: 99;
+    border-radius: 26px 26px 0 0;
 `
 const HeaderCircleIcon = styled.div`
     width: 40px;

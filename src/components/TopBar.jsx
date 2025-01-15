@@ -15,8 +15,7 @@ const TopBar = () => {
     const [alarmState, setAlarmState] = useState(true)
 
     const onPressAlarm = () => {
-        alert("알람 바로가기")
-        return navigate()
+        return navigate("/alarmPage")
     }
 
     return <TopBox>
@@ -43,7 +42,13 @@ export default TopBar
 
 
 const TopBox = styled.div`
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    max-width: 768px;
     height: 60px;
+    box-sizing: border-box;
+    background-color: white;
     padding: 0 16px;
     border-bottom: 1px solid #dbdbdb;
     display: flex;
@@ -64,7 +69,6 @@ const AlarmBox = styled.div`
     width: 36px;
     height: 36px;
 `
-
 const AlarmBtn = styled.div`
     cursor: pointer;
     height: 100%;

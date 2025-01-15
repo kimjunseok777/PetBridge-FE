@@ -7,6 +7,8 @@ import ListRead from "../pages/list-read-page/listRead";
 import ListCreate from "../pages/list-create-page/listCreate";
 import ListSearch from "../pages/list-search-page/listSearch";
 import ListDetail from "../pages/list-detail-page/listDetail";
+import ListCreateComplete from "../pages/list-create-page/listCreate-Complete";
+import AlarmMain from "../pages/Alarm-page/Alarm-main";
 
 
 export const router = createBrowserRouter([
@@ -17,6 +19,7 @@ export const router = createBrowserRouter([
         --> 상단에 뒤로가기 바나 네브바가 페이지마다 고정되기 때문에 만들어준 것이다 */
 
         children: [
+            //--------------------------------------------------------------------
             {
                 // 로그인 페이지
                 path: "/",
@@ -53,12 +56,18 @@ export const router = createBrowserRouter([
                 path: "/list-create",
                 element: <ListCreate/>
             },
+            {
+                // 분양글 생성 완료 페이지
+                path: "/list-create-complete",
+                element: <ListCreateComplete/>
+            },
             //--------------------------------------------------------------------
             {
                 // 알람 페이지
                 path: "/alarmPage",
-                // element: </>
+                element: <AlarmMain/>
             },
+            //--------------------------------------------------------------------
             {
                 // 입양 계약서 페이지 (입양자)
                 path: "/contract-userPage",

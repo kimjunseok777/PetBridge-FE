@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import CheckBox from "../../../../components/CheckBox"
+import ItemTitle from "../../../../components/Item-Title"
 
 
 
@@ -10,9 +11,9 @@ const FilterFirst = () => {
     // 성별 only 체크박스:
     const checkOnlyOne = (checkThis) => {
         const checkboxes = document.getElementsByName('gender')
-            // checkboxes 의 길이만큼 반복
-            for (let i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i] !== checkThis) {
+        // checkboxes 의 길이만큼 반복
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i] !== checkThis) {
                 checkboxes[i].checked = false
             }
         }
@@ -25,34 +26,34 @@ const FilterFirst = () => {
     ]
     //-----------------------------------------------------------------------------
 
-    return <div style={{padding: "16px"}}>
+    return <div style={{ padding: "16px" }}>
         {/*------------------ 중성화 여부 & 체중 ------------------*/}
-        <div style={{display: "flex", alignItems: "center", marginBottom: "20px"}}>
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "30px" }}>
             {/*------------------ 중성화 여부 ------------------*/}
-            <div style={{display: "flex", alignItems: "center", width: "50%"}}>
-                <CheckTitle>중성화 여부</CheckTitle>
-                <CheckBox checked="on"/>
+            <div style={{ display: "flex", alignItems: "center", width: "45%" }}>
+                <ItemTitle item={true}>중성화 여부</ItemTitle>
+                <CheckBox />
             </div>
             {/*------------------ 체중 ------------------*/}
-            <div style={{display: "flex", alignItems: "center", width: "50%"}}>
-                <CheckTitle>체중</CheckTitle>
-                <div style={{display: "flex", alignItems: "center", gap: "6px", marginLeft: "8px"}}>
+            <div style={{ display: "flex", alignItems: "center", width: "55%" }}>
+                <ItemTitle item={true}>체중</ItemTitle>
+                <div style={{ display: "flex", alignItems: "center", gap: "4px", marginLeft: "6px" }}>
                     <WeightInputBox>
                         <WeightText>kg</WeightText>
-                        <WeightInput placeholder="00" type="number"/>
+                        <WeightInput placeholder="00" type="number" />
                     </WeightInputBox>
-                    <div style={{fontFamily: "Pretendard-SemiBold", color: "#575757"}}>~</div>
+                    <div style={{ fontFamily: "Pretendard-SemiBold", color: "#575757" }}>~</div>
                     <WeightInputBox>
                         <WeightText>kg</WeightText>
-                        <WeightInput placeholder="00" type="number" maxLength="2"/>
+                        <WeightInput placeholder="00" type="number" maxLength="2" />
                     </WeightInputBox>
                 </div>
             </div>
         </div>
 
         {/*------------------ 성별 ------------------*/}
-        <CheckTitle>성별</CheckTitle>
-        <div style={{display: "flex", marginLeft: "-6px", gap: "20px"}}>
+        <ItemTitle>성별</ItemTitle>
+        <div style={{ display: "flex", marginLeft: "-6px", gap: "20px" }}>
             <CheckBox text={'전체보기'} name="gender" value="1" checked="on"
                 onChange={(e) => checkOnlyOne(e.target)}
             />
@@ -64,29 +65,23 @@ const FilterFirst = () => {
             />
         </div>
 
-        <div style={{marginBottom: "20px"}}></div>
+        <div style={{ marginBottom: "30px" }}></div>
 
         {/*------------------ 접종 내역 ------------------*/}
-        <CheckTitle>접종 내역</CheckTitle>
+        <ItemTitle>접종 내역</ItemTitle>
         <InoculationLayout>
-            {inoculationArray.map((el) => <div key={el} style={{width: "30%"}}>
-                <CheckBox text={el}/>
+            {inoculationArray.map((el) => <div key={el} style={{ width: "30%" }}>
+                <CheckBox text={el} />
             </div>)}
         </InoculationLayout>
 
-        {/* <div style={{marginBottom: "20px"}}></div> */}
+        {/* <div style={{marginBottom: "30px"}}></div> */}
     </div>
 }
 
 export default FilterFirst
 
 
-const CheckTitle = styled.div`
-    font-family: 'Pretendard-Bold';
-    font-size: 18px;
-    color: #404040;
-    letter-spacing: -0.5px;
-`
 const WeightInputBox = styled.div`
     position: relative;
     width: 66px;
@@ -103,8 +98,8 @@ const WeightInput = styled.input`
     border-radius: 4px;
     box-sizing: border-box;
     padding: 0 24px 0 6px;
-    font-family: 'Pretendard-Medium';
-    color: #747474;
+    font-family: 'Pretendard-SemiBold';
+    color: #555555;
     &::placeholder{
         font-family: 'Pretendard-Medium';
         color: #acacac;

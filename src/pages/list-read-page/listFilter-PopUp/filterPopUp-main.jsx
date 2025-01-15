@@ -9,31 +9,31 @@ import FilterPopUpBoard from "./filterPopUp-board"
 // 가장 상단 컴포넌트인 RootLayout 에서 import 해줬음
 const FilterPopUpMain = () => {
 
-    const {setIsOpenFilter} = useFilter()
+    const { setIsOpenFilter } = useFilter()
     const onPressCancel = () => {
         return setIsOpenFilter(false)
     }
 
     // 팝업 ON일 때 배경 스크롤 방지
     useEffect(() => {
-        document.body.style= `overflow: hidden`;
+        document.body.style = `overflow: hidden`;
         return () => document.body.style = `overflow: auto`
     }, [])
-      
 
-    return  <FilterBackground>
+
+    return <FilterBackground>
 
         <Layout>
             {/*------------------ 필터 닫기 버튼 ------------------*/}
             <FilterCancelBtn onClick={onPressCancel}>
                 <img src={filterCancelBtn} style={{
                     width: "50px"
-                }}/>
+                }} />
             </FilterCancelBtn>
 
             {/*------------------ 필터 보드 ------------------*/}
             <FilterBoard>
-                <FilterPopUpBoard/>
+                <FilterPopUpBoard />
             </FilterBoard>
 
         </Layout>
@@ -96,7 +96,8 @@ const FilterBoard = styled.div`
     height: 600px;
     border-radius: 30px 30px 0px 0px;
     bottom: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-y: scroll;
     position: absolute;
     // 애니메이션 :
     animation-name: filterBoard;

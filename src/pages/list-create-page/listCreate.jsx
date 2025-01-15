@@ -16,7 +16,7 @@ const ListCreate = () => {
                     <HeaderTitle>분양글 등록하기</HeaderTitle>
                     <img src={createIcon} style={{ width: "36px" }} />
                 </div>
-                <div style={{ height: "1px", backgroundColor: "#ff9d42" }}></div>
+                <div style={{ height: "1px", backgroundColor: "#ffa550" }}></div>
                 <HeaderContent>
                     아래 나와있는 항목들은 모두 필수 작성 입력란입니다.<br />
                     기재할 내용이 없다면 "없음"으로 입력해주세요.
