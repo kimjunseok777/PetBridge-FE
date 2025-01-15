@@ -58,6 +58,7 @@ const FilterHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0px 16px;
+    box-sizing: border-box;
     background-color: white;
     position: fixed;
     width: calc(100% - 32px);

@@ -9,6 +9,8 @@ import ListSearch from "../pages/list-search-page/listSearch";
 import ListDetail from "../pages/list-detail-page/listDetail";
 import ListCreateComplete from "../pages/list-create-page/listCreate-Complete";
 import AlarmMain from "../pages/Alarm-page/Alarm-main";
+import ContractUserPage from "../pages/Contract-page/Contract-User/Contract-User";
+import ContractWriterPage from "../pages/Contract-page/Contract-Writer/Contract-Writer";
 
 
 export const router = createBrowserRouter([
@@ -69,14 +71,14 @@ export const router = createBrowserRouter([
             },
             //--------------------------------------------------------------------
             {
-                // 입양 계약서 페이지 (입양자)
+                // 입양자 계약서 페이지 (입양자)
                 path: "/contract-userPage",
-                // element: </>
+                element: <ContractUserPage/>
             },
             {
-                // 입양 계약서 페이지 (분양자)
+                // 분양자 계약서 페이지 (분양자)
                 path: "/contract-writerPage",
-                // element: </>
+                element: <ContractWriterPage/>
             },
             //--------------------------------------------------------------------
         ]

@@ -20,11 +20,6 @@ const AlarmTopFilter = () => {
             state: false,
         },
         {
-            id: 3,
-            text: "입양",
-            state: false,
-        },
-        {
             id: 4,
             text: "분양",
             state: false,
