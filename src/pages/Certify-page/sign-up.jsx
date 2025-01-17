@@ -5,7 +5,6 @@ import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useNavigate } from "react-router-dom"
-import TermsOfUse from "./sign-up/termsOfUse"
 import CertifyInputBtn from "../../components/Certify-input-btn"
 
 

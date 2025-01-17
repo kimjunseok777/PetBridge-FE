@@ -11,7 +11,7 @@ const AlarmListItem = ({ el }) => {
     const onPressContractAlarm = (contractState) => {
         // 계약서 알람 상태가 false 라면 그냥 return 한다
         if (!contractState) return
-        alert("분양 계약서 페이지로 이동합니다.")
+        alert("입양 수락 페이지로 이동합니다.")
         return navigate("/contract-writerPage")
     }
 

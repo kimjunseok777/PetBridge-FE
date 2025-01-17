@@ -1,15 +1,22 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import TopBar from "../components/TopBar"
 import styled from "styled-components"
 import FilterPopUpMain from "../pages/list-read-page/listFilter-PopUp/filterPopUp-main"
 import { useFilter } from "../store/filterPop.store"
+import { URL_HELPER } from "./url-helper"
 
 
 
 
 const RootLayout = () => {
 
+    // 필터 관리 상태
     const { isOpenFilter } = useFilter()
+
+    // 상단바 & 네브바 관리
+    const location = useLocation()
+    const urlMatchData = URL_HELPER[location.pathname]
+
 
     return <Body>
 
@@ -18,9 +25,7 @@ const RootLayout = () => {
 
         <Container>
 
-            {/* 로그인 페이지와 기본 리스트 페이지에서는 상단에 뒤로가기 바가 나오지 않게 해야한다 */}
-            <TopBar />
-
+            <TopBar urlMatchData={urlMatchData} />
             <div style={{ height: "60px" }} />
 
             {/* route.js 에서 이 컴포넌트의 자식 컴포넌트를 Outlet으로 보여주는 것이다 */}

@@ -28,8 +28,8 @@ const ListSearch = () => {
     return <>
         {/*------------------- 상단 검색바 -------------------*/}
         <InputBox>
-            <SearchImg  src={searchIcon}/>
-            <Input placeholder="입양하고 싶은 아이를 검색해보세요!"/>
+            <SearchImg src={searchIcon} />
+            <Input placeholder="입양하고 싶은 아이를 검색해보세요!" />
         </InputBox>
 
         {/*------------------- 최근 검색어 -------------------*/}
@@ -42,11 +42,11 @@ const ListSearch = () => {
             <DeleteAll onClick={onPressDeleteAll}>모두삭제</DeleteAll>
         </div>
         <RecentBox>
-            {recentMockData.map((el) => <RecentSearchTerms text={el} key={el}/>)}
+            {recentMockData.map((el) => <RecentSearchTerms text={el} key={el} />)}
         </RecentBox>
 
         {/*------------------- 하단 버튼 -------------------*/}
-        <FixedBtn/>
+        <FixedBtn />
     </>
 }
 

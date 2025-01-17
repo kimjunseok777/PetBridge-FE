@@ -9,7 +9,7 @@ const AnimalSaleBtn = () => {
     const navigate = useNavigate()
 
     const onPressAnimalSaleBtn = () => {
-        alert('입양 계약서 페이지로 이동합니다.')
+        alert('입양 신청 페이지로 이동합니다.')
         return navigate("/contract-userPage")
     }
 

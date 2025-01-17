@@ -97,7 +97,7 @@ const Text1 = styled.div`
 `
 const Text2 = styled.div`
     text-align: center;
-    font-family: "Pretendard-SemiBold";
+    font-family: "Pretendard-Medium";
     color: #a8a8a8;
     font-size: 18px;
     line-height: 22px;

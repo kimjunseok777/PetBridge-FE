@@ -6,8 +6,8 @@ import FixedBtnCreate from "./Fixed-Btn-create";
 // 우측 하단 분양글 필터 & 생성 버튼 컴포넌트
 const FixedBtn = () => {
     return <FixedBtnLayout>
-        <FixedBtnFilter/>
-        <FixedBtnCreate/>
+        <FixedBtnFilter />
+        <FixedBtnCreate />
     </FixedBtnLayout>
 }
 
@@ -20,6 +20,7 @@ const FixedBtnLayout = styled.div`
     position: fixed;
     right: 20px;
     bottom: 20px;
+    /* bottom: 80px; */
 `
 
 

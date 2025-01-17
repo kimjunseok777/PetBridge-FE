@@ -2,8 +2,8 @@ import styled from "styled-components"
 import CertifyInput from "../../components/Certify-input";
 import CertifyButton from "../../components/Certify-button";
 import * as yup from "yup"
-import {useForm} from "react-hook-form"
-import {yupResolver} from "@hookform/resolvers/yup"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
 import { useNavigate } from "react-router-dom";
 
 
@@ -12,6 +12,8 @@ const SignIn = () => {
 
     const navigate = useNavigate()
 
+    //----------------------------------------------------------
+    // 로그인 기능 :
     const onPressSignIn = async (data) => {
         const response = await fetch("http://54.180.158.123:8080/api/v1/auth/login", {
             method: "post",
@@ -28,7 +30,7 @@ const SignIn = () => {
 
         console.log(response_data)
 
-        if(response.status === 200) {
+        if (response.status === 200) {
             alert('분양글 리스트페이지로 이동합니다')
             return navigate("/list-read")
         }
@@ -45,9 +47,9 @@ const SignIn = () => {
         password: yup.string().min(8, '비밀번호는 8글자 이상 입력해주세요').required("비밀번호를 입력해주세요")
     })
     const {
-         register,
-         formState: {errors, isValid},
-         handleSubmit
+        register,
+        formState: { errors, isValid },
+        handleSubmit
     } = useForm({
         mode: "onChange",
         resolver: yupResolver(signInFormSchema)
@@ -56,56 +58,40 @@ const SignIn = () => {
 
     return <Container>
 
-        <LoginTitle>
-            안녕하세요:)<br/>
-            <name style={{
-                fontFamily: "Pretendard-Black"
-            }}>펫브릿지</name>입니다.<br/>
-        </LoginTitle>
+        <div>
+            <LoginTitle>
+                안녕하세요:)<br />
+                <name style={{
+                    fontFamily: "Pretendard-Black",
+                }}>펫브릿지</name>입니다.<br />
+            </LoginTitle>
 
-        <div style={{
-            color: "#b2b2b2",
-            fontFamily: "Pretendard-Medium",
-            fontSize: 16,
-            marginBottom: 30,
-        }}>
-            안녕하세요 펫브릿지입니다. 통합회원 로그인이 가능합니다.
-        </div>
+            <div style={{
+                color: "#a3a3a3",
+                fontFamily: "Pretendard-Medium",
+                fontSize: 17,
+                marginBottom: 30,
+                lineHeight: 1.4
+            }}>
+                안녕하세요, 무료분양을 쉽고 빠르게 도와주는 서비스<br />펫브릿지 플랫폼입니다.
+            </div>
 
-        {/*------------------------------ 로그인 ------------------------------*/}
-        <LoginForm onSubmit={handleSubmit(onPressSignIn)}>
-            <CertifyInput placeholder={'이메일을 입력해주세요'} register={register} name={'email'}
-                error={errors.email?.message}
-            />
-            <CertifyInput placeholder={'비밀번호를 입력해주세요'} register={register} name={'password'}
-                error={errors.password?.message}
-            />
-            <CertifyButton>로그인</CertifyButton>
-        </LoginForm>
+            {/*------------------------------ 로그인 ------------------------------*/}
+            <LoginForm onSubmit={handleSubmit(onPressSignIn)}>
+                <CertifyInput placeholder={'이메일을 입력해주세요'} register={register} name={'email'}
+                    error={errors.email?.message}
+                />
+                <CertifyInput placeholder={'비밀번호를 입력해주세요'} register={register} name={'password'}
+                    error={errors.password?.message}
+                />
 
-        <OtherBtnBox>
-            <p>아이디 찾기</p>
-            <OtheBtnLine/>
-            <p>비밀번호 찾기</p>
-            <OtheBtnLine/>
-            <p onClick={onClickSignUp}>회원가입</p>
-        </OtherBtnBox>
-
-        <SocialLogin>
-            <SocialLine/>
-            <p style={{
-                margin: 30
-            }}>SNS계정으로 로그인</p>
-            <SocialLine/>
-        </SocialLogin>
-
-        <div style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 10
-        }}>
-            <SocialIcon/>
-            <SocialIcon/>
+                {/*----------------- 로그인 & 회원가입 버튼 -----------------*/}
+                <BtnLayout>
+                    <CertifyButton>로그인</CertifyButton>
+                    <div style={{ height: "10px" }}></div>
+                    <SignUpBtn type="button" onClick={onClickSignUp}>회원가입</SignUpBtn>
+                </BtnLayout>
+            </LoginForm>
         </div>
 
     </Container>
@@ -115,56 +101,33 @@ export default SignIn
 
 
 const Container = styled.div`
-    padding: 0 16px;
+    padding: 160px 16px 0px 16px;
+    box-sizing: border-box;
+    height: calc(100vh - 60px);
 `
 const LoginTitle = styled.div`
     font-family: "Pretendard-SemiBold";
-    font-size: 36px;
-    margin: 80px 0px 10px;
+    font-size: 42px;
     color: #22252A;
+    margin-bottom: 8px;
 `;
-
 const LoginForm = styled.form`
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 `;
-const OtherBtnBox = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 60px;
-    font-family: "Pretendard-Medium";
-    color: #646464;
-    margin-bottom: 30px;
-    &>p:hover{
-        color: #383838;
-        cursor: pointer;
-    }
-`
-const OtheBtnLine = styled.div`
-    background-color: #D3D3D3;
-    width: 1px;
-    height: 8px;
-`
-const SocialLogin = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Pretendard-Medium";
-    color: #959595;
-    font-size: 14px;
-`
-const SocialLine = styled.div`
-    /* width: 32%; */
-    min-width: 30%;
-    /* max-width: 50%; */
-    height: 1px;
-    background-color: #D9D9D9;
-`
-const SocialIcon = styled.div`
-    width: 46px;
-    height: 46px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
-`
 
-
+// 로그인 & 회원가입 버튼
+const SignUpBtn = styled.button`
+    width: 100%;
+    height: 56px;
+    border: none;
+    background-color: #afafaf;
+    color: white;
+    border-radius: 6px;
+    font-family: "Pretendard-Medium";
+    font-size: 18px;
+`
+const BtnLayout = styled.div`
+    position: absolute;
+    bottom: 16px;
+    width: calc(100% - 32px);
+`

@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 
 
-const CertifyButton = ({children, ...props}) => {
+const CertifyButton = ({ children, ...props }) => {
     return <Button
         {...props}
     >{children}</Button>
@@ -20,7 +20,4 @@ const Button = styled.button`
     border-radius: 6px;
     font-family: "Pretendard-Medium";
     font-size: 18px;
-    &:hover{
-        background-color: #d56700;
-    }
 `

@@ -71,12 +71,12 @@ export const router = createBrowserRouter([
             },
             //--------------------------------------------------------------------
             {
-                // 입양자 계약서 페이지 (입양자)
+                // 입양자 신청 페이지 (입양자)
                 path: "/contract-userPage",
                 element: <ContractUserPage/>
             },
             {
-                // 분양자 계약서 페이지 (분양자)
+                // 반려자 수락 페이지 (반려자)
                 path: "/contract-writerPage",
                 element: <ContractWriterPage/>
             },

@@ -3,11 +3,12 @@ import styled from "styled-components"
 import backIcon from "../image/back_icon.png"
 import alarmIcon from "../image/alarm_icon.png"
 import alarmIText from "../image/alarm_text.png"
+import logoIcon from "../image/animal_sale_icon.png"
 import { useState } from "react"
 
 
 
-const TopBar = () => {
+const TopBar = ({ urlMatchData }) => {
 
     const navigate = useNavigate()
 
@@ -19,21 +20,30 @@ const TopBar = () => {
     }
 
     return <TopBox>
+        {/*-------------- 로고 아이콘 --------------*/}
+        {urlMatchData.topLogo && <div style={{ display: "flex", alignItems: "center" }}>
+            <LogoBox>
+                <img src={logoIcon} alt="wait..." style={{ width: "18px" }} />
+            </LogoBox>
+            <div>펫브릿지</div>
+        </div>}
 
         {/*-------------- 뒤로가기 --------------*/}
-        <BackBtn onClick={() => navigate(-1)}>
+        {urlMatchData.backBtn && <BackBtn onClick={() => navigate(-1)}>
             <img src={backIcon} alt="wait..." style={{ width: "14px" }} />
             뒤로가기
-        </BackBtn>
+        </BackBtn>}
+
+        <div></div>
 
         {/*-------------- 알람 --------------*/}
-        <AlarmBox>
+        {urlMatchData.alarmBtn && <AlarmBox>
             <AlarmBtn onClick={onPressAlarm}>
                 <img src={alarmIcon} alt="wait..." style={{ width: "16px", paddingBottom: "2px" }} />
             </AlarmBtn>
             {alarmState && <AlarmPoint />}
             {alarmState && <AlarmText src={alarmIText} />}
-        </AlarmBox>
+        </AlarmBox>}
 
     </TopBox>
 }
@@ -93,3 +103,20 @@ const AlarmText = styled.img`
     left: -112px;
     bottom: 2px;
 `
+// 로고 :
+const LogoBox = styled.div`
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    background-color: #FF9500;
+    margin-right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & + div {
+        /* color: #666666; */
+        color: #FF9500;
+        font-family: "Pretendard-SemiBold";
+    }
+`
+
