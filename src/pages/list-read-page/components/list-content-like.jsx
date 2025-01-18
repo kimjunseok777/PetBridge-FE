@@ -5,14 +5,15 @@ import likeFalseIcon from "../../../image/like-false.png"
 
 
 
-const ListContentLike = ({likeNum, likeState}) => {
+const ListContentLike = ({ likeNum, likeState }) => {
 
-    const onPressLikeBtn = () => {
+    const onPressLikeBtn = (event) => {
+        event.stopPropagation()
         return alert('좋아요 버튼 클릭')
     }
 
     return <LikeBox onClick={onPressLikeBtn} $isState={likeState}>
-        <LikeIcon src={likeState ? likeTrueIcon : likeFalseIcon}/>
+        <LikeIcon src={likeState ? likeTrueIcon : likeFalseIcon} />
         <LikeNum $isState={likeState}>{likeNum}</LikeNum>
     </LikeBox>
 }
@@ -33,7 +34,7 @@ const LikeBox = styled.div`
     justify-content: center;
     align-items: center;
     gap: 6px;
-    background-color: ${({$isState}) => $isState ? "#fff" : "rgba(0, 0, 0, 0.15)"};
+    background-color: ${({ $isState }) => $isState ? "#fff" : "rgba(0, 0, 0, 0.15)"};
 `
 const LikeIcon = styled.img`
     width: 20px;
@@ -41,5 +42,5 @@ const LikeIcon = styled.img`
 const LikeNum = styled.div`
     font-family: "Pretendard-Medium";
     color: #747474;
-    color: ${({$isState}) => $isState ? "#747474" : "#fff"};
+    color: ${({ $isState }) => $isState ? "#747474" : "#fff"};
 `

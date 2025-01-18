@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 
 
-const NavItem = ({ el, navData, setNavData }) => {
+const NavItem = ({ el }) => {
 
     const navigate = useNavigate()
 

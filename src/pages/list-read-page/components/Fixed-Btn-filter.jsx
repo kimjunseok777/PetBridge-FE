@@ -1,21 +1,21 @@
 import styled from "styled-components"
 import filterIcon from "../../../image/filter.png"
-import { useFilter } from "../../../store/filterPop.store"
+import { usePopUp } from "../../../store/PopUp.store"
 
 
 
 const FixedBtnFilter = () => {
 
-    const {setIsOpenFilter} = useFilter()
+    const { setIsOpenPopUp } = usePopUp()
 
     // filter 기능 ON
     const onPressFilterBtn = () => {
         // alert('필터 기능 활성화')
-        return setIsOpenFilter(true)
+        return setIsOpenPopUp("filter")
     }
 
     return <CircleBox onClick={onPressFilterBtn}>
-        <IconImg src={filterIcon}/>
+        <IconImg src={filterIcon} />
     </CircleBox>
 }
 

@@ -1,10 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom"
-import TopBar from "../components/TopBar"
 import styled from "styled-components"
 import FilterPopUpMain from "../pages/list-read-page/listFilter-PopUp/filterPopUp-main"
-import { useFilter } from "../store/filterPop.store"
 import { URL_HELPER } from "./url-helper"
 import NavBar from "../components-NAV/Nav-Main"
+import FixedBtn from "../pages/list-read-page/components/Fixed-Btn"
+import TopBar from "../components-TOP/TopBar"
+import { usePopUp } from "../store/PopUp.store"
+import LogOutPopUp from "../components-TOP/components/LogOut-popup"
 
 
 
@@ -12,7 +14,7 @@ import NavBar from "../components-NAV/Nav-Main"
 const RootLayout = () => {
 
     // 필터 관리 상태
-    const { isOpenFilter } = useFilter()
+    const { isOpenPopUp } = usePopUp()
 
     // 상단바 & 네브바 관리
     const location = useLocation()
@@ -21,8 +23,11 @@ const RootLayout = () => {
 
     return <Body>
 
+        {/* --------------- 로그아웃 팝업창 --------------- */}
+        {isOpenPopUp === "logOut" && <LogOutPopUp />}
+
         {/* --------------- 분양글 필터 팝업창 --------------- */}
-        {isOpenFilter && <FilterPopUpMain />}
+        {isOpenPopUp === "filter" && <FilterPopUpMain />}
 
         <Container>
 
@@ -32,7 +37,10 @@ const RootLayout = () => {
 
             <Outlet />
 
-            {/* --------------- 하단 바 --------------- */}
+            {/* --------------- 검색필터 & 생성 고정 버튼 --------------- */}
+            {urlMatchData.fixedBtn && <FixedBtn />}
+
+            {/* --------------- 하단 바 (네브바) --------------- */}
             {urlMatchData.nav && <NavBar />}
 
         </Container>

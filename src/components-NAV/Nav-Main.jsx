@@ -23,6 +23,7 @@ const NavBar = () => {
             id: 1,
             text: "홈",
             state: location.pathname === "/list-read" || "/list-search",
+            // state: ["/list-read", "/list-search"].includes(location.pathname),
             imgFalse: navHomeOff,
             imgTrue: navHomeON,
             path: "/list-read",
@@ -45,7 +46,7 @@ const NavBar = () => {
         },
     ])
     //-------------------------------------------------------
-    // 네브바 true or false 상태 변경
+    // 네브바 true / false 상태 변경
     useEffect(() => {
         setNavData((prev) =>
             prev.map((item) => ({
@@ -56,9 +57,7 @@ const NavBar = () => {
     //-------------------------------------------------------
 
     return <NavBox>
-        {navData.map((el) => <NavItem key={el.id} el={el}
-            navData={navData} setNavData={setNavData}
-        />)}
+        {navData.map((el) => <NavItem key={el.id} el={el} />)}
     </NavBox>
 }
 

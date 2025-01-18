@@ -1,48 +1,89 @@
-import styled from "styled-components"
-import likeIcon from "../../image/like-icon.png"
-import TopLine from "./components/top-line"
 import LikeList from "./components/like-list"
+import animal from "../../image/animal.jpg"
+import LikePageHeader from "./components/like-header"
 
 
 
 const LikeMain = () => {
 
+
+    //------------------------------------------------------------------------
+    // 좋아요 리스트 목데이터
+    const ContentMockData = [
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+        {
+            id: Math.floor(Math.random() * 1000000),
+            title: "분양글 타이틀",
+            content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
+            img: animal,
+            likeNum: 27,
+            likeState: true,
+            view: 218,
+        },
+    ]
+
+
     return <>
         {/* --------------- 상단 타이틀 --------------- */}
-        <div style={{ padding: "20px 20px 8px" }}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-                <LikeCircle>
-                    <img src={likeIcon} style={{ width: "30px" }} />
-                </LikeCircle>
-                <LikeText>찜목록</LikeText>
-            </div>
-        </div>
-
-        {/* --------------- 상단 라인 --------------- */}
-        <TopLine />
+        <LikePageHeader ContentMockData={ContentMockData} />
 
         {/* --------------- 찜목록 리스트 --------------- */}
-        <LikeList />
-
+        <LikeList ContentMockData={ContentMockData} />
     </>
 }
 
 export default LikeMain
 
-
-const LikeCircle = styled.div`
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background-color: #ff830f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-`
-const LikeText = styled.div`
-    font-family: "Pretendard-Bold";
-    color: #3f3f3f;
-    font-size: 28px;
-    letter-spacing: -0.5px;
-`

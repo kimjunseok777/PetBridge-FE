@@ -4,7 +4,6 @@ import TopFilterBar from "./topComponents/top-filter"
 import styled from "styled-components"
 import ListContent from "./components/list-content"
 import animal from "../../image/animal.jpg"
-import FixedBtn from "./components/Fixed-Btn"
 
 
 
@@ -100,8 +99,6 @@ const ListRead = () => {
                 onClick={onPressListDetail} />)}
         </ListContainer>
 
-        {/* --------------- 검색필터 & 분양글생성 버튼 --------------- */}
-        <FixedBtn />
     </>
 }
 

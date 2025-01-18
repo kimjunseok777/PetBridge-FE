@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import searchIcon from "../../image/search-icon.png"
-import FixedBtn from "../list-read-page/components/Fixed-Btn"
 import RecentSearchTerms from "./recent-search"
 
 
@@ -45,8 +44,6 @@ const ListSearch = () => {
             {recentMockData.map((el) => <RecentSearchTerms text={el} key={el} />)}
         </RecentBox>
 
-        {/*------------------- 하단 버튼 -------------------*/}
-        <FixedBtn />
     </>
 }
 

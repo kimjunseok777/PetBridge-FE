@@ -4,14 +4,14 @@ import ListContentLike from "./list-content-like"
 
 
 
-const ListContent = ({el, ...props}) => {
+const ListContent = ({ el, ...props }) => {
 
     return <ContentContainer {...props}>
 
         {/*------------ 좌측 이미지 ------------*/}
         <ImgContainer>
-            <Img src={el.img}/>
-            <ListContentLike likeNum={el.likeNum} likeState={el.likeState}/>
+            <Img src={el.img} />
+            <ListContentLike likeNum={el.likeNum} likeState={el.likeState} />
         </ImgContainer>
 
         {/*------------ 우측 텍스트 ------------*/}
@@ -39,15 +39,12 @@ const ContentContainer = styled.div`
 const ImgContainer = styled.div`
     position: relative;
     width: 200px;
-
-    /* height: 100%; */
     border-radius: 10px;
     overflow: hidden;
     background-color: #ececec;
 `
 const Img = styled.img`
     width: 100%;
-    /* height: 100%; */
     object-fit: cover;
 `
 

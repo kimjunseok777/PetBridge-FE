@@ -1,17 +1,18 @@
 import styled from "styled-components"
-import { useFilter } from "../../../store/filterPop.store"
 import filterCancelBtn from "../../../image/filter_cancel_btn.png"
 import { useEffect } from "react"
 import FilterPopUpBoard from "./filterPopUp-board"
+import { usePopUp } from "../../../store/PopUp.store"
 
 
 // 분양글 필터 기능 :
 // 가장 상단 컴포넌트인 RootLayout 에서 import 해줬음
 const FilterPopUpMain = () => {
 
-    const { setIsOpenFilter } = useFilter()
+    const { setIsOpenPopUp } = usePopUp()
+
     const onPressCancel = () => {
-        return setIsOpenFilter(false)
+        return setIsOpenPopUp(null)
     }
 
     // 팝업 ON일 때 배경 스크롤 방지

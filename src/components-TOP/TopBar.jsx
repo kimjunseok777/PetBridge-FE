@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import backIcon from "../image/back_icon.png"
-import alarmIcon from "../image/alarm_icon.png"
-import alarmIText from "../image/alarm_text.png"
 import logoIcon from "../image/animal_sale_icon.png"
-import { useState } from "react"
+import LogOut from "./components/LogOut"
+import Alarm from "./components/Alarm"
 
 
 
@@ -12,12 +11,6 @@ const TopBar = ({ urlMatchData }) => {
 
     const navigate = useNavigate()
 
-    // 읽지 않은 알람 목데이터 :
-    const [alarmState, setAlarmState] = useState(true)
-
-    const onPressAlarm = () => {
-        return navigate("/alarmPage")
-    }
 
     return <TopBox>
         {/*-------------- 로고 아이콘 --------------*/}
@@ -28,6 +21,9 @@ const TopBar = ({ urlMatchData }) => {
             <div>펫브릿지</div>
         </div>}
 
+        {/*-------------- 로그아웃 --------------*/}
+        {urlMatchData.logOutBtn && <LogOut />}
+
         {/*-------------- 뒤로가기 --------------*/}
         {urlMatchData.backBtn && <BackBtn onClick={() => navigate(-1)}>
             <img src={backIcon} alt="wait..." style={{ width: "14px" }} />
@@ -37,13 +33,7 @@ const TopBar = ({ urlMatchData }) => {
         <div></div>
 
         {/*-------------- 알람 --------------*/}
-        {urlMatchData.alarmBtn && <AlarmBox>
-            <AlarmBtn onClick={onPressAlarm}>
-                <img src={alarmIcon} alt="wait..." style={{ width: "16px", paddingBottom: "2px" }} />
-            </AlarmBtn>
-            {alarmState && <AlarmPoint />}
-            {alarmState && <AlarmText src={alarmIText} />}
-        </AlarmBox>}
+        {urlMatchData.alarmBtn && <Alarm />}
 
     </TopBox>
 }
@@ -72,36 +62,6 @@ const BackBtn = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
-`
-// 알람 :
-const AlarmBox = styled.div`
-    position: relative;
-    width: 36px;
-    height: 36px;
-`
-const AlarmBtn = styled.div`
-    cursor: pointer;
-    height: 100%;
-    border-radius: 50%;
-    background-color: #C9C9C9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-const AlarmPoint = styled.div`
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ff830f;
-    left: 0px;
-    bottom: 0px;
-`
-const AlarmText = styled.img`
-    position: absolute;
-    width: 110px;
-    left: -112px;
-    bottom: 2px;
 `
 // 로고 :
 const LogoBox = styled.div`

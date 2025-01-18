@@ -7,7 +7,7 @@ export const URL_HELPER = {
     "/": {
         backBtn: false,
         alarmBtn: false,
-        topLogo: true //--> 상단 로고
+        topLogo: true, //--> 상단 로고
     },
     // 회원가입
     "/sign-up": {
@@ -21,18 +21,20 @@ export const URL_HELPER = {
         topLogo: true
     },
     //--------------------------------------------------------------------
-    // 리스트 조회
+    // 리스트 조회 (메인 페이지)
     "/list-read": {
         nav: true,
-        backBtn: true,
+        backBtn: false,
         alarmBtn: true,
-        logOutBtn: true //--> 로그아웃 버튼
+        logOutBtn: true, //--> 로그아웃 버튼
+        fixedBtn: true
     },
     // 리스트 검색
     "/list-search": {
         nav: true,
         backBtn: true,
-        alarmBtn: true
+        alarmBtn: true,
+        fixedBtn: true
     },
     // 리스트 상세보기
     "/list-detailPage": {
@@ -57,7 +59,7 @@ export const URL_HELPER = {
     "/alarmPage": {
         nav: false,
         backBtn: true,
-        alarmBtn: false
+        alarmBtn: false,
     },
     //--------------------------------------------------------------------
     // 입양 요청 페이지 (입양자)
@@ -73,18 +75,20 @@ export const URL_HELPER = {
         alarmBtn: true
     },
     //--------------------------------------------------------------------
-    // 찜 목록 페이지
+    // 찜 목록 페이지 (메인 페이지)
     "/likePage": {
         nav: true,
-        backBtn: true,
-        alarmBtn: true
+        backBtn: false,
+        alarmBtn: true,
+        logOutBtn: true, //--> 로그아웃 버튼
     },
     //--------------------------------------------------------------------
-    // 마이 페이지
+    // 마이 페이지 (메인 페이지)
     "/myPage": {
         nav: true,
-        backBtn: true,
-        alarmBtn: true
+        backBtn: false,
+        alarmBtn: true,
+        logOutBtn: true, //--> 로그아웃 버튼
     },
 }
 

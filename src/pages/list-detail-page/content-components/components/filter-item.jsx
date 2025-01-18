@@ -31,7 +31,6 @@ const ItemContent = styled.div`
     font-family: "Pretendard-SemiBold";
     font-size: 20px;
     letter-spacing: -0.5px;
-    /* color: #898989; */
     color: #FF9500;
 `
 const TextGap = styled.div`
