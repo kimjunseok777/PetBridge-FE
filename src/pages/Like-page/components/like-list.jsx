@@ -1,27 +1,21 @@
-import { useNavigate } from "react-router-dom"
-import TopSearchBar from "./topComponents/top-search"
-import TopFilterBar from "./topComponents/top-filter"
 import styled from "styled-components"
-import ListContent from "./components/list-content"
-import animal from "../../image/animal.jpg"
-import FixedBtn from "./components/Fixed-Btn"
+import animal from "../../../image/animal.jpg"
+import ListContent from "../../list-read-page/components/list-content"
+import { useNavigate } from "react-router-dom"
 
 
 
-const ListRead = () => {
+const LikeList = () => {
 
     const navigate = useNavigate()
-
-    const onPressSearchBar = () => {
-        return navigate("/list-search")
-    }
 
     const onPressListDetail = () => {
         return navigate("/list-detailPage")
     }
 
+
     //--------------------------------------------------------------------------------------------
-    // 분양글 리스트 목데이터
+    // 좋아요 리스트 목데이터
     const ContentMockData = [
         {
             id: Math.floor(Math.random() * 1000000),
@@ -38,7 +32,7 @@ const ListRead = () => {
             content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
             img: animal,
             likeNum: 27,
-            likeState: false,
+            likeState: true,
             view: 218,
         },
         {
@@ -47,7 +41,7 @@ const ListRead = () => {
             content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
             img: animal,
             likeNum: 27,
-            likeState: false,
+            likeState: true,
             view: 218,
         },
         {
@@ -74,7 +68,7 @@ const ListRead = () => {
             content: "분양글 소타이틀이나 상세내용을 작성해주시면 됩니다",
             img: animal,
             likeNum: 27,
-            likeState: false,
+            likeState: true,
             view: 218,
         },
         {
@@ -87,29 +81,17 @@ const ListRead = () => {
             view: 218,
         },
     ]
-    //--------------------------------------------------------------------------------------------
 
-    return <>
-        {/* --------------- 상단 검색 & 상단 필터 --------------- */}
-        <TopSearchBar onClick={onPressSearchBar} />
-        <TopFilterBar />
 
-        {/* --------------- 분양글 리스트 --------------- */}
-        <ListContainer>
-            {ContentMockData.map((el) => <ListContent key={el.id} el={el}
-                onClick={onPressListDetail} />)}
-        </ListContainer>
-
-        {/* --------------- 검색필터 & 분양글생성 버튼 --------------- */}
-        <FixedBtn />
-    </>
+    return <Container>
+        {ContentMockData.map((el) => <ListContent key={el.id} el={el}
+            onClick={onPressListDetail} />)}
+    </Container>
 }
 
-export default ListRead
+export default LikeList
 
 
-const ListContainer = styled.div`
-    padding: 16px 16px 80px 16px;
+const Container = styled.div`
+    padding: 16px;
 `
-
-

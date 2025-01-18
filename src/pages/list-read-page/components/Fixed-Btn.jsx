@@ -19,8 +19,8 @@ const FixedBtnLayout = styled.div`
     width: 74px;
     position: fixed;
     right: 20px;
-    bottom: 20px;
-    /* bottom: 80px; */
+    /* bottom: 20px; */
+    bottom: 90px;
 `
 
 

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import FilterPopUpMain from "../pages/list-read-page/listFilter-PopUp/filterPopUp-main"
 import { useFilter } from "../store/filterPop.store"
 import { URL_HELPER } from "./url-helper"
+import NavBar from "../components-NAV/Nav-Main"
 
 
 
@@ -25,11 +26,14 @@ const RootLayout = () => {
 
         <Container>
 
+            {/* --------------- 상단 바 --------------- */}
             <TopBar urlMatchData={urlMatchData} />
             <div style={{ height: "60px" }} />
 
-            {/* route.js 에서 이 컴포넌트의 자식 컴포넌트를 Outlet으로 보여주는 것이다 */}
             <Outlet />
+
+            {/* --------------- 하단 바 --------------- */}
+            {urlMatchData.nav && <NavBar />}
 
         </Container>
     </Body>

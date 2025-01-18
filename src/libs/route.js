@@ -11,6 +11,8 @@ import ListCreateComplete from "../pages/list-create-page/listCreate-Complete";
 import AlarmMain from "../pages/Alarm-page/Alarm-main";
 import ContractUserPage from "../pages/Contract-page/Contract-User/Contract-User";
 import ContractWriterPage from "../pages/Contract-page/Contract-Writer/Contract-Writer";
+import LikeMain from "../pages/Like-page/Like-main";
+import MyMain from "../pages/My-page/My-main";
 
 
 export const router = createBrowserRouter([
@@ -81,6 +83,17 @@ export const router = createBrowserRouter([
                 element: <ContractWriterPage/>
             },
             //--------------------------------------------------------------------
+            {
+                // 찜목록 페이지 (좋아요 페이지)
+                path: "/likePage",
+                element: <LikeMain/>
+            },
+            //--------------------------------------------------------------------
+            {
+                // 마이 페이지
+                path: "/myPage",
+                element: <MyMain/>
+            },
         ]
     },
 ])

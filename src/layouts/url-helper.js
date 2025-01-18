@@ -36,43 +36,56 @@ export const URL_HELPER = {
     },
     // 리스트 상세보기
     "/list-detailPage": {
-        nav: true,
+        nav: false,
         backBtn: true,
         alarmBtn: true
     },
     // 분양글 생성
     "/list-create": {
-        nav: true,
+        nav: false,
         backBtn: true,
         alarmBtn: true
     },
     // 분양글 생성 완료
     "/list-create-complete": {
-        nav: true,
+        nav: false,
         backBtn: false,
         alarmBtn: true,
     },
     //--------------------------------------------------------------------
     // 알람
     "/alarmPage": {
-        nav: true,
+        nav: false,
         backBtn: true,
         alarmBtn: false
     },
     //--------------------------------------------------------------------
-    // 입양 계약서 페이지
+    // 입양 요청 페이지 (입양자)
     "/contract-userPage": {
-        nav: true,
+        nav: false,
         backBtn: true,
         alarmBtn: true
     },
-    // 분양 계약서 페이지
+    // 입양 수락 페이지 (반려자)
     "/contract-writerPage": {
+        nav: false,
+        backBtn: true,
+        alarmBtn: true
+    },
+    //--------------------------------------------------------------------
+    // 찜 목록 페이지
+    "/likePage": {
         nav: true,
         backBtn: true,
         alarmBtn: true
     },
     //--------------------------------------------------------------------
+    // 마이 페이지
+    "/myPage": {
+        nav: true,
+        backBtn: true,
+        alarmBtn: true
+    },
 }
 
 
