@@ -1,17 +1,23 @@
 import styled from "styled-components"
 import ItemTitle from "../../../components/Item-Title"
 import CreateTextArea from "./create-textarea"
+import ImageUploader from "./Image"
 
 
 
 
 const CreateStep2Title = () => {
+
+    //-------------------------------------------------------------------
+
+    //-------------------------------------------------------------------
+
+
     return <>
         {/*--------------- 사진 ---------------*/}
         <ItemTitle>사진 첨부</ItemTitle>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <PictureBtn>대기중...</PictureBtn>
-        </div>
+        {/*---> 이미지 업로드 <---*/}
+        <ImageUploader />
 
         <div style={{ marginBottom: "24px" }}></div>
 
@@ -30,8 +36,4 @@ const CreateStep2Title = () => {
 }
 
 export default CreateStep2Title
-
-
-const PictureBtn = styled.button`
-`
 

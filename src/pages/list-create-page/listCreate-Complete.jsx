@@ -12,7 +12,6 @@ const ListCreateComplete = () => {
     const navigate = useNavigate()
 
     const onPressConfirm = () => {
-        alert("리스트 페이지로 이동합니다")
         return navigate("/list-read")
     }
 

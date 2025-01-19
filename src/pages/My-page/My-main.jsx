@@ -39,7 +39,7 @@ const MyMain = () => {
 
         {/* --------------- 내 분양글 리스트 --------------- */}
         <ListContainer>
-            {ContentMockData.map((el) => <MyListIem el={el} />)}
+            {ContentMockData.map((el) => <MyListIem el={el} key={el.id} />)}
         </ListContainer>
     </>
 }

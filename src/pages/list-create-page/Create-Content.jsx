@@ -14,7 +14,6 @@ const CreateContent = () => {
     // 등록하기 버튼 :
     const onPressCreateBtn = (event) => {
         event.preventDefault()
-        alert("분양글 생성 완료")
         return navigate("/list-create-complete")
     }
 
