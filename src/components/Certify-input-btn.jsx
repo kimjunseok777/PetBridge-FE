@@ -3,12 +3,10 @@ import styled from "styled-components"
 
 
 
-const CertifyInputBtn = ({error, name, register, btnText, func, ...props}) => {
-
-
+const CertifyInputBtn = ({ error, name, register, btnText, func, ...props }) => {
     return <>
         <InputForm>
-            <Input {...props} {...register?.(name)}/>
+            <Input {...props} {...register?.(name)} />
             <InputBtn type="button" onClick={func}>{btnText}</InputBtn>
         </InputForm>
 
@@ -52,6 +50,13 @@ const Input = styled.input`
     &:focus{
         border: 2px solid #FF9500;
         outline: none;
+    }
+    &:disabled{
+        background-color: #eeeeee;
+        & + button {
+            pointer-events: none;
+            background-color: #c8c8c8;
+        }
     }
 `
 const InputBtn = styled.button`

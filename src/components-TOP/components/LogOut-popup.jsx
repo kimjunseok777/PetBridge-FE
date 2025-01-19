@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { useEffect } from "react"
 import LogOutPopUpIcon from "./LogOut-popup-icon"
 import LogOutBtn from "./LogOut-popup-btn"
+import React from 'react';
 
 
 
@@ -21,7 +22,12 @@ const LogOutPopUp = () => {
     // 로그아웃 버튼 :
     const onPressLogOut = () => {
         setIsOpenPopUp(null)
-        return navigate("/")
+
+        // 세션 또는 로컬 스토리지에서 사용자 정보 제거 (예: JWT 토큰)
+        localStorage.removeItem('userToken'); // 예시로 localStorage에서 'userToken' 삭제
+
+        // 로그인 페이지로 리디렉션
+        navigate('/'); // '/login'은 로그인 페이지의 경로입니다.
     }
 
 

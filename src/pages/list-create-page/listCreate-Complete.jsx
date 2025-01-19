@@ -54,6 +54,7 @@ const Layout = styled.div`
     flex-direction: column;
     margin-top: -120px;
 `
+// 아이콘
 const PencilCircle = styled.div`
     border-radius: 50%;
     width: 140px;
@@ -85,7 +86,7 @@ const CheckIcon = styled.img`
     width: 28px;
     padding-top: 4px;
 `
-
+// 텍스트
 const Text1 = styled.div`
     text-align: center;
     font-family: "Pretendard-Bold";
@@ -99,8 +100,7 @@ const Text2 = styled.div`
     font-family: "Pretendard-Medium";
     color: #a8a8a8;
     font-size: 18px;
-    line-height: 22px;
-    letter-spacing: -0.3px;
+    line-height: 24px;
 `
 
 const BtnPosition = styled.div`

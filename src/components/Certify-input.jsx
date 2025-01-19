@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 
 
-const CertifyInput = ({error, name, register, ...props}) => {
+const CertifyInput = ({ error, name, register, ...props }) => {
     return <>
         <InputBox>
-            <Input {...props} {...register?.(name)}/>
+            <Input {...props} {...register?.(name)} />
         </InputBox>
         <p style={{
             fontFamily: "Pretendard-SemiBold",
@@ -23,7 +23,7 @@ const CertifyInput = ({error, name, register, ...props}) => {
 export default CertifyInput
 
 
-const  InputBox = styled.div`
+const InputBox = styled.div`
     width: 100%;
     height: 56px;
     display: flex;

@@ -26,13 +26,19 @@ const SignIn = () => {
             })
         })
 
-        const response_data = await response.json()
-
-        console.log(response_data)
+        // const response_data = await response.json()
+        // console.log(response_data)
 
         if (response.status === 200) {
-            alert('분양글 리스트페이지로 이동합니다')
+            alert('펫브릿지에 오신 것을 환영합니다.')
             return navigate("/list-read")
+        }
+        if (response.status !== 200) {
+            reset({
+                email: "",
+                password: ""
+            })
+            return alert('이메일과 비밀번호가 정확한지 확인해주세요.')
         }
     }
 
@@ -49,7 +55,8 @@ const SignIn = () => {
     const {
         register,
         formState: { errors, isValid },
-        handleSubmit
+        handleSubmit,
+        reset
     } = useForm({
         mode: "onChange",
         resolver: yupResolver(signInFormSchema)
@@ -81,7 +88,7 @@ const SignIn = () => {
                 <CertifyInput placeholder={'이메일을 입력해주세요'} register={register} name={'email'}
                     error={errors.email?.message}
                 />
-                <CertifyInput placeholder={'비밀번호를 입력해주세요'} register={register} name={'password'}
+                <CertifyInput type="password" placeholder={'비밀번호를 입력해주세요'} register={register} name={'password'}
                     error={errors.password?.message}
                 />
 

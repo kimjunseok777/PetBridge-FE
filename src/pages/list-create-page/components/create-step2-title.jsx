@@ -1,7 +1,6 @@
-import styled from "styled-components"
 import ItemTitle from "../../../components/Item-Title"
 import CreateTextArea from "./create-textarea"
-import ImageUploader from "./Image"
+import ImageUploader from "./Image-Upload"
 
 
 
